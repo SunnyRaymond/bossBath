@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "../supabaseClient";
+import { Footer } from "../components/Footer";
 
 interface BathRecord {
   id: string;
@@ -161,8 +162,8 @@ export const RaymondView: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-4 items-end">
-          <div className="flex-1">
+        <div className="flex flex-col md:flex-row gap-4 w-full">
+          <div className="flex-1 w-full">
             <label className="block font-medium">Location</label>
             <input
               type="text"
@@ -172,21 +173,23 @@ export const RaymondView: React.FC = () => {
               placeholder="City, Country"
             />
           </div>
-          <button
-            type="button"
-            className="btn btn-sm btn-primary flex items-center gap-2"
-            onClick={handleLocation}
-            disabled={locationLoading}
-          >
-            {locationLoading ? (
-              <span className="animate-spin inline-block w-4 h-4 border-2 border-pink-400 border-t-transparent rounded-full"></span>
-            ) : (
-              <span role="img" aria-label="location">
-                📍
-              </span>
-            )}
-            Get Location
-          </button>
+          <div className="mt-2 md:mt-0 md:ml-2 w-full md:w-auto flex-shrink-0">
+            <button
+              type="button"
+              className="btn btn-sm btn-primary flex items-center gap-2 w-full md:w-auto"
+              onClick={handleLocation}
+              disabled={locationLoading}
+            >
+              {locationLoading ? (
+                <span className="animate-spin inline-block w-4 h-4 border-2 border-pink-400 border-t-transparent rounded-full"></span>
+              ) : (
+                <span role="img" aria-label="location">
+                  📍
+                </span>
+              )}
+              Get Location
+            </button>
+          </div>
         </div>
         <div>
           <label className="block font-medium">Notes</label>
