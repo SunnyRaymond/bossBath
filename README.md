@@ -6,13 +6,33 @@ A modern, production-ready template for building full-stack React applications u
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **No login required**: Just open the app and start tracking!
+- **Apple-style mode switcher**: Toggle between Raymond (record) and Hannah (stats) modes.
+- **Raymond Mode**:
+  - Record a shower: date, start time, end time, location (auto or manual), notes, mark as featured.
+  - View all previous showers, with featured and location/notes highlights.
+- **Hannah Mode**:
+  - See how many showers Raymond took today.
+  - See last shower details: when, where, how long, notes.
+  - See which day had the most showers, and which locations.
+  - Fun stats: average per day, most common location, most recent featured shower, and more.
+- **Responsive design**: Looks great on both mobile and laptop screens.
+- **Lovely, attractive UI**: Uses TailwindCSS for a modern, colorful, and non-minimalist look.
+
+## Usage
+
+1. Clone the repo and install dependencies:
+   ```
+   npm install
+   ```
+2. Create a `.env.local` file as described above.
+3. Start the dev server:
+   ```
+   npm run dev
+   ```
+4. Open the app in your browser. Use the switch at the top to toggle between Raymond and Hannah modes.
+
+---
 
 ## Getting Started
 
@@ -81,6 +101,25 @@ Make sure to deploy the output of `npm run build`
 ## Styling
 
 This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+
+## Environment Variables
+
+Create a `.env.local` file in the project root with the following format:
+
+```
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
+
+Replace `your-supabase-url` and `your-supabase-anon-key` with your actual Supabase project credentials.
+
+## Dependencies
+
+Install the required dependency:
+
+```
+npm install @supabase/supabase-js
+```
 
 ---
 
